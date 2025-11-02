@@ -42,7 +42,7 @@ if choice == "n":
     accessToken = input("please input your access token ")
     accessToken = "Bearer " + accessToken
 else:
-    accessToken = "Bearer "
+    accessToken = "Bearer Y2IzM2I5MzItMDA0OS00OGUzLWJkMzYtY2ZhN2Q0ZmVmNWY0MmYzNjMzZTMtNGIw_P0A1_636b97a0-b0af-4297-b0e7-480dd517b3f9"
 
 # 3. Provide the URL to the Webex room API.
 r = requests.get(   "https://webexapis.com/v1/rooms",
@@ -59,7 +59,7 @@ if not r.status_code == 200:
 print("\nList of available rooms:")
 rooms = r.json()["items"]
 for room in rooms:
-    #<!!!REPLACEME with print code to finish the loop>
+    print(f"Type: {room['type']} \n Title: {room['title']}")
 
 #######################################################################################
 # SEARCH FOR WEBEX ROOM TO MONITOR
