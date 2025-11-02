@@ -133,10 +133,9 @@ while True:
             print("error in receiving reply")
 
 # 7. Record the ISS GPS coordinates and timestamp.
-
-        lat = json_data["<!!!REPLACEME!!!> with path to latitude key!!!>"]
-        lng = json_data["<!!!REPLACEME!!!> with path to longitude key!!!>"]
-        timestamp = json_data["<!!!REPLACEME!!!> with path to timestamp key!!!>"]
+        lat = json_data["iss_position"]["latitude"]
+        lng = json_data["iss_position"]["longitude"]
+        timestamp = json_data["timestamp"]
         
 # 8. Convert the timestamp epoch value to a human readable date and time.
         # Use the time.ctime function to convert the timestamp to a human readable date and time.
