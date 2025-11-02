@@ -156,14 +156,14 @@ while True:
                         )
 
     # Verify if the returned JSON data from the API service are OK
-        json_data = <!!!REPLACEME with code>
-        
-        <!!!REPLACEME with code for error handling in case no response>
+        json_data = r.json()
+
+        if r.status_code != 200:
+            print("error, failed to get geolocation data")
 
 # 11. Store the location received from the API in a required variables
-        CountryResult = json_data["<!!!REPLACEME!!!> with path to adminArea1 key!!!>"]
-        <!!!REPLACEME with code to save state, city, street etc>
-        
+        CountryResult = json_data["sys"]["country"]
+        CityResult = json_data["sys"]["name"]
         #Find the country name using ISO3611 country code
         if not CountryResult == "XZ":
             CountryResult = countries.get(CountryResult).name
