@@ -108,7 +108,7 @@ while True:
 
     json_data = r.json()
     if len(json_data["items"]) == 0:
-         <!!!REPLACEME with code for error handling>    
+        print("error, no messages in the room.")    
     
     messages = json_data["items"]
     message = messages[0]["text"]
@@ -118,7 +118,7 @@ while True:
         if (message[1:].isdigit()):
             seconds = int(message[1:])  
         else:
-             <!!!REPLACEME with code for error handling>
+            print("error, message must start with a '/' and be followed by numbers")
     
     #for the sake of testing, the max number of seconds is set to 5.
         if seconds > 5:
@@ -127,11 +127,10 @@ while True:
         time.sleep(seconds)     
     
 # 6. Provide the URL to the ISS Current Location API.         
-        r = requests.get("<!!!REPLACEME with URL!!!>")
-        
-        json_data = <!!!REPLACEME with code>
-        
-        <!!!REPLACEME with code for error handling in case not success response>
+        r = requests.get("http://api.open-notify.org/iss-now.json")
+        json_data = r.json()
+        if r.status_code != 200:
+            print("error in receiving reply")
 
 # 7. Record the ISS GPS coordinates and timestamp.
 
