@@ -30,11 +30,13 @@
 # 1. Import libraries for API requests, JSON formatting, epoch time conversion, and iso3166.
 
 #<!!!REPLACEME with code for libraries>
+
 import requests
 import json
 import time
 from datetime import datetime
 from iso3166 import countries
+from keys import keys 
 
 # 2. Complete the if statement to ask the user for the Webex access token.
 choice = input("Do you wish to use the hard-coded Webex token? (y/n) ")
@@ -42,7 +44,7 @@ if choice == "n":
     accessToken = input("please input your access token ")
     accessToken = "Bearer " + accessToken
 else:
-    accessToken = "Bearer "
+    accessToken = "Bearer " + keys["webexKey"]
 
 # 3. Provide the URL to the Webex room API.
 r = requests.get(   "https://webexapis.com/v1/rooms",
@@ -139,17 +141,17 @@ while True:
         
 # 8. Convert the timestamp epoch value to a human readable date and time.
         # Use the time.ctime function to convert the timestamp to a human readable date and time.
-        timeString = <!!!REPLACEME with conversion code!!!>       
+        timeString = time.ctime(timestamp)      
    
 # 9. Provide your Geoloaction API consumer key.
     
         mapsAPIGetParameters = { 
-                                <!!!REPLACEME with all the required paramenters by the api>
+                                "appid":keys["openWeather"]
                                }
     
 # 10. Provide the URL to the Reverse GeoCode API.
     # Get location information using the API reverse geocode service using the HTTP GET method
-        r = requests.get("<!!!REPLACEME with URL!!!>", 
+        r = requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lng}&appid={keys["openWeather"]}", 
                              params = mapsAPIGetParameters
                         )
 
@@ -173,7 +175,7 @@ while True:
         if CountryResult == "XZ":
             responseMessage = "On {}, the ISS was flying over a body of water at latitude {}° and longitude {}°.".format(timeString, lat, lng)
         
-<!!!REPLACEME with if statements to compose the message to display the current ISS location in the Webex Team room!!!>
+        <!!!REPLACEME with if statements to compose the message to display the current ISS location in the Webex Team room!!!>
         elif
         else
        
