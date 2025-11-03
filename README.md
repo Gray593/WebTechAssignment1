@@ -106,7 +106,7 @@ Python time module.
 |---------|---------|
 | Library used | `time` |
 | Function used to convert epoch | `time.ctime()` |
-| Sample code to convert timestamp |
+| Sample code to convert timestamp | see below|
 ```
 timestamp = 1730663230
 timeString = time.ctime(timestamp)
