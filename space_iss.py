@@ -149,12 +149,15 @@ def geolocation(lat,lng):
 
     if r.status_code != 200:
         print("error, failed to get geolocation data")
-    print(json_data)
 # 11. Store the location received from the API in a required variables
     try:
         CountryResult = json_data["sys"]["country"]
-        CityResult = json_data["sys"]["name"]
-        return CountryResult,CityResult
+        CountryResult = countries.get(CountryResult).name
+        try:
+            CityResult = json_data["sys"]["name"]
+            return CountryResult,CityResult
+        except:
+            return CountryResult,False  
     except:
         CountryResult = "XZ"
         #Find the country name using ISO3611 country code
