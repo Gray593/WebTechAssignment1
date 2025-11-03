@@ -49,9 +49,9 @@ Python time module.
 | Authentication method | `Requires a Authentication key` |
 | Required query parameters | `the required query parameters are lat (latitude) lon (longditude) and the appid (your api key)` |
 | Sample request with latitude/longitude | see below |`    
-r = requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={40.75}&lon={-73.99}&appid={AUTHENTICATIONKEY}", 
-    params = {"appid": APIKEYHERE}  
-    )` |
+    r = requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={40.75}&lon={-73.99}&appid={AUTHENTICATIONKEY}", 
+        params = {"appid": APIKEYHERE}  
+        )` 
 | Sample JSON response (formatted example) |
 ```
 {
