@@ -28,7 +28,7 @@ Python time module.
 |---------|---------|
 | API Base URL | `http://api.open-notify.org/` |
 | Endpoint for current ISS location | `http://api.open-notify.org/iss-now.json` |
-| Sample response format (example JSON) |
+| Sample response format (example JSON) | see below |
 ```
 {
     'timestamp': 1762188573, 
@@ -48,9 +48,10 @@ Python time module.
 | Endpoint for reverse geocoding | `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}` |
 | Authentication method | `Requires a Authentication key` |
 | Required query parameters | `the required query parameters are lat (latitude) lon (longditude) and the appid (your api key)` |
-| Sample request with latitude/longitude | `    r = requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={40.75}&lon={-73.99}&appid={AUTHENTICATIONKEY}", 
-                                                    params = {"appid": APIKEYHERE}  
-                                                    )` |
+| Sample request with latitude/longitude | see below |`    
+r = requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={40.75}&lon={-73.99}&appid={AUTHENTICATIONKEY}", 
+    params = {"appid": APIKEYHERE}  
+    )` |
 | Sample JSON response (formatted example) |
 ```
 {
@@ -106,7 +107,7 @@ Python time module.
 |---------|---------|
 | Library used | `time` |
 | Function used to convert epoch | `time.ctime()` |
-| Sample code to convert timestamp | see below|
+| Sample code to convert timestamp | see below |
 ```
 timestamp = 1730663230
 timeString = time.ctime(timestamp)
