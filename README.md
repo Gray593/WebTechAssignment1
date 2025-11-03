@@ -121,7 +121,7 @@ print(timeString)
 - **Server**: The server in this instance host the multiple api's that are called by the client  
 - (Explain the communication between them & include a block diagram )
 
-![Block Diagram](./Block%20Diagram.png)
+![Block Diagram](./Images/Block%20Diagram.png)
 ### 🚀 RESTful API Usage
 -
 -
@@ -129,13 +129,16 @@ print(timeString)
 ### 🚀 MVC Pattern in Space Bot
 | Component | Description |
 |------------|-------------|
-| **Model** | |
-| **View** | |
-| **Controller** | |
+| **Model** | The apis that are called within the code e.g. open weather api, webex api and the iss api|
+| **View** | The output that the user interacts with in this case its the webex chat window that the result gets sent to|
+| **Controller** | The controller represents the python program that co-ordinates recieveing and posting to the various apis|
 #### Example:
-- Model:
-- View:
-- Controller:
+- Model: the api calls made from the python program
+![Model](./Images/Model.png)
+- View: the webex chat window that shows the result
+![View](./Images/View.png)
+- Controller: the python program
+![Controller](./Images/Controller.png)
 ---
 ### 🚀 Notes
 - Use official documentation for accuracy (e.g. developer.webex.com, locationiq.com
