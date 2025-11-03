@@ -15,13 +15,14 @@ Python time module.
 | Endpoint to get messages | `https://webexapis.com/v1/messages` |
 | Endpoint to send message | `https://webexapis.com/v1/messages` |
 | Required headers | `Authorization` |
-| Sample full GET or POST request |r = requests.get("https://webexapis.com/v1/messages", 
-                                            params ={
-                                                "roomId": roomIdToGetMessages,
-                                                "max": 1
-                                                }, 
-                                            headers = {"Authorization": accessToken}
-                                             )|
+| Sample full GET or POST request |see below |
+    r = requests.get("https://webexapis.com/v1/messages", 
+        params ={
+            "roomId": roomIdToGetMessages,
+            "max": 1
+            }, 
+        headers = {"Authorization": accessToken}
+        )
 ---
 ## Section 2: ISS Current Location API (3 marks)
 | Criteria | Details |
